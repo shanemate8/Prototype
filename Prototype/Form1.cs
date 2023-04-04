@@ -31,7 +31,7 @@ namespace Prototype
         {
 
             this.Hide();
-            var form2 = new Form2();
+            var form2 = new Form10();
             form2.FormClosed += (s, args) => this.Close();
             form2.Show();
 
