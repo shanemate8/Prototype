@@ -48,9 +48,10 @@
             // 
             this.President.AutoSize = true;
             this.President.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.President.Location = new System.Drawing.Point(38, 80);
+            this.President.Location = new System.Drawing.Point(21, 65);
+            this.President.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.President.Name = "President";
-            this.President.Size = new System.Drawing.Size(221, 63);
+            this.President.Size = new System.Drawing.Size(131, 37);
             this.President.TabIndex = 0;
             this.President.Text = "Position";
             this.President.Click += new System.EventHandler(this.label1_Click);
@@ -62,9 +63,10 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1372, 80);
+            this.button1.Location = new System.Drawing.Point(775, 65);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(281, 95);
+            this.button1.Size = new System.Drawing.Size(158, 61);
             this.button1.TabIndex = 1;
             this.button1.Text = "Write-In";
             this.button1.UseVisualStyleBackColor = true;
@@ -73,9 +75,10 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(49, 864);
+            this.button2.Location = new System.Drawing.Point(28, 551);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(269, 87);
+            this.button2.Size = new System.Drawing.Size(158, 61);
             this.button2.TabIndex = 2;
             this.button2.Text = "Back";
             this.button2.UseVisualStyleBackColor = true;
@@ -84,9 +87,10 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(1401, 864);
+            this.button3.Location = new System.Drawing.Point(775, 551);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(283, 98);
+            this.button3.Size = new System.Drawing.Size(158, 61);
             this.button3.TabIndex = 3;
             this.button3.Text = "Next";
             this.button3.UseVisualStyleBackColor = true;
@@ -96,9 +100,10 @@
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(689, 263);
+            this.checkBox1.Location = new System.Drawing.Point(388, 170);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(356, 67);
+            this.checkBox1.Size = new System.Drawing.Size(214, 41);
             this.checkBox1.TabIndex = 4;
             this.checkBox1.Text = "Candidate 1";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -108,9 +113,10 @@
             // 
             this.checkBox2.AutoSize = true;
             this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(689, 410);
+            this.checkBox2.Location = new System.Drawing.Point(388, 260);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(356, 67);
+            this.checkBox2.Size = new System.Drawing.Size(216, 41);
             this.checkBox2.TabIndex = 8;
             this.checkBox2.Text = "Candidate 2";
             this.checkBox2.UseVisualStyleBackColor = true;
@@ -120,9 +126,10 @@
             // 
             this.checkBox3.AutoSize = true;
             this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox3.Location = new System.Drawing.Point(689, 566);
+            this.checkBox3.Location = new System.Drawing.Point(388, 350);
+            this.checkBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(356, 67);
+            this.checkBox3.Size = new System.Drawing.Size(216, 41);
             this.checkBox3.TabIndex = 9;
             this.checkBox3.Text = "Candidate 3";
             this.checkBox3.UseVisualStyleBackColor = true;
@@ -132,9 +139,10 @@
             // 
             this.checkBox4.AutoSize = true;
             this.checkBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox4.Location = new System.Drawing.Point(689, 709);
+            this.checkBox4.Location = new System.Drawing.Point(388, 440);
+            this.checkBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(356, 67);
+            this.checkBox4.Size = new System.Drawing.Size(216, 41);
             this.checkBox4.TabIndex = 10;
             this.checkBox4.Text = "Candidate 4";
             this.checkBox4.UseVisualStyleBackColor = true;
@@ -149,7 +157,8 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1716, 49);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(3, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(965, 36);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -158,29 +167,29 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(87, 45);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 29);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(230, 54);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(141, 34);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(104, 45);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(65, 29);
             this.helpToolStripMenuItem.Text = "Help";
             this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1716, 1005);
+            this.ClientSize = new System.Drawing.Size(965, 648);
             this.Controls.Add(this.checkBox4);
             this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.checkBox2);
@@ -192,6 +201,7 @@
             this.Controls.Add(this.menuStrip1);
             this.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form2";
             this.Text = "Blockchain Voting LLC";
             this.Load += new System.EventHandler(this.BlockchainVotingLLC_Load);
