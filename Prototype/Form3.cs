@@ -30,8 +30,16 @@ namespace Prototype
 
         private void button3_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Submitted!!!");
-            Close();
+            DialogResult dialogResult = MessageBox.Show("Are you ready to submit?", "", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                MessageBox.Show("Submitted!");
+                this.Close();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                
+            }
         }
 
         private void Form3_Load(object sender, EventArgs e)
