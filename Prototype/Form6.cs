@@ -59,5 +59,14 @@ namespace Prototype
         {
             label1.Text = stdName;
         }
+        private void label1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

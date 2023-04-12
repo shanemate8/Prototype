@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using static System.Net.WebRequestMethods;
 using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace Prototype
 {
@@ -45,11 +46,36 @@ namespace Prototype
             contents[1] = "Last Name: " + textBox2.Text;
             contents[2] = "Date of Birth: " + textBox3.Text;
             contents[3] = "VUID: " + textBox4.Text;
-            System.IO.File.WriteAllLines(@"C:\Users\shane\Documents\Information.txt", contents);
+            System.IO.File.WriteAllLines(@"C:\Users\nomuu\source\repos\Prototype\Prototype\Information.txt", contents);
             this.Hide();
+
+            if (FileEquals(@"C:\Users\nomuu\source\repos\Prototype\Prototype\DeathRecord.txt",
+                @"C:\Users\nomuu\source\repos\Prototype\Prototype\Information.txt") == true)
+            {
+                MessageBox.Show("This person is in the death record!", "Caption");
+            }
+            else {
+                MessageBox.Show("You may continue!", "Caption");
+            }
+
             var form2 = new Form2();
             form2.FormClosed += (s, args) => this.Close();
             form2.Show();
+        }
+
+        static bool FileEquals(string path1, string path2)
+        {
+            byte[] file1 = File.ReadAllBytes(path1);
+            byte[] file2 = File.ReadAllBytes(path2);
+
+            for (int i = 0; i < file1.Length; i++)
+            {
+                if (file1[i] == file2[i])
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -61,5 +87,11 @@ namespace Prototype
         {
 
         }
+
+
+
+        
+            
+
     }
 }
