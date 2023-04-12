@@ -46,8 +46,18 @@ namespace Prototype
             contents[1] = "Last Name: " + textBox2.Text;
             contents[2] = "Date of Birth: " + textBox3.Text;
             contents[3] = "VUID: " + textBox4.Text;
-            System.IO.File.WriteAllLines(@"C:\Users\shane\Documents\Information.txt", contents);
+            System.IO.File.WriteAllLines(@"C:\Users\nomuu\source\repos\Prototype\Prototype\Information.txt", contents);
             this.Hide();
+            string a = @"C:\Users\nomuu\source\repos\Prototype\Prototype\DeathRecord.txt";
+            string b = @"C:\Users\nomuu\source\repos\Prototype\Prototype\Information.txt";
+            if (FileEquals(a, b) == true)
+            {
+                MessageBox.Show("This name is in the death record");
+            }
+            else {
+                MessageBox.Show("You may continue");
+            }
+
             var form2 = new Form2();
             form2.FormClosed += (s, args) => this.Close();
             form2.Show();
@@ -55,17 +65,17 @@ namespace Prototype
 
         static bool FileEquals(string path1, string path2)
         {
-            byte[] file1 = File.ReadAllBytes(path1);
-            byte[] file2 = File.ReadAllBytes(path2);
+            byte[] file1 = System.IO.File.ReadAllBytes(path1);
+            byte[] file2 = System.IO.File.ReadAllBytes(path2);
 
-            for (int i = 0; i < file1.Length; i++)
+            for (int i = 0; i < 3; i++)
             {
-                if (file1[i] == file2[i])
+                if (file1[i] != file2[i])
                 {
-                    return true;
+                    return false;
                 }
             }
-            return false;
+            return true;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
