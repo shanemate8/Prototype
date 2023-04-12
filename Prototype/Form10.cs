@@ -51,6 +51,14 @@ namespace Prototype
             string a = @"C:\Users\nomuu\source\repos\Prototype\Prototype\DeathRecord.txt";
             string b = @"C:\Users\nomuu\source\repos\Prototype\Prototype\Information.txt";
             if (FileEquals(a, b) == true)
+
+            // Must be changed to local directory
+            System.IO.File.WriteAllLines(@"C:\Users\Dayton\Documents\Information.txt", contents);
+
+            // Must be changed to local directory
+            string userFile = "C:\\Users\\Dayton\\source\\repos\\Prototype\\Prototype\\BlockchainUser1.txt";
+            string info = "C:\\Users\\Dayton\\source\\repos\\Prototype\\Prototype\\information.txt";
+            if (is_Registered(userFile,info))
             {
                 MessageBox.Show("This name is in the death record");
             }
