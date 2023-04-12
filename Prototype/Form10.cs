@@ -45,11 +45,41 @@ namespace Prototype
             contents[1] = "Last Name: " + textBox2.Text;
             contents[2] = "Date of Birth: " + textBox3.Text;
             contents[3] = "VUID: " + textBox4.Text;
-            System.IO.File.WriteAllLines(@"C:\Users\shane\Documents\Information.txt", contents);
-            this.Hide();
-            var form2 = new Form2();
-            form2.FormClosed += (s, args) => this.Close();
-            form2.Show();
+
+            // Must be changed to local directory
+            System.IO.File.WriteAllLines(@"C:\Users\Dayton\Documents\Information.txt", contents);
+
+            // Must be changed to local directory
+            string userFile = "C:\\Users\\Dayton\\Documents\\BlockchainUser1.txt";
+            string info = "C:\\Users\\Dayton\\Documents\\information.txt";
+            if (is_Registered(userFile,info))
+            {
+
+                this.Hide();
+                var form2 = new Form2();
+                form2.FormClosed += (s, args) => this.Close();
+                form2.Show();
+
+            } else
+            {
+                MessageBox.Show("User is not registered!");
+            }
+        }
+
+        /*
+         *  Checks if the user is registered by comparing input data to an existing file 
+         */
+        private Boolean is_Registered(string userFile, string info)
+        {
+            
+            byte[] bytes1 = Encoding.Convert(Encoding.GetEncoding(1252), Encoding.ASCII, Encoding.GetEncoding(1252).GetBytes(System.IO.File.ReadAllText(userFile)));
+            byte[] bytes2 = Encoding.Convert(Encoding.GetEncoding(1252), Encoding.ASCII, Encoding.GetEncoding(1252).GetBytes(System.IO.File.ReadAllText(info)));
+
+            if (Encoding.ASCII.GetChars(bytes1).SequenceEqual(Encoding.ASCII.GetChars(bytes2)))
+            {
+                return true;
+            }
+            return false;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
