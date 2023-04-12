@@ -46,44 +46,47 @@ namespace Prototype
             contents[1] = "Last Name: " + textBox2.Text;
             contents[2] = "Date of Birth: " + textBox3.Text;
             contents[3] = "VUID: " + textBox4.Text;
-            System.IO.File.WriteAllLines(@"C:\Users\nomuu\source\repos\Prototype\Prototype\Information.txt", contents);
-            this.Hide();
-            string a = @"C:\Users\nomuu\source\repos\Prototype\Prototype\DeathRecord.txt";
-            string b = @"C:\Users\nomuu\source\repos\Prototype\Prototype\Information.txt";
-            if (FileEquals(a, b) == true)
+            
+
+        // Must be changed to local directory
+        System.IO.File.WriteAllLines(@"C:\Users\nomuu\source\repos\Prototype\Prototype\Information.txt", contents);
 
             // Must be changed to local directory
-            System.IO.File.WriteAllLines(@"C:\Users\Dayton\Documents\Information.txt", contents);
-
-            // Must be changed to local directory
-            string userFile = "C:\\Users\\Dayton\\source\\repos\\Prototype\\Prototype\\BlockchainUser1.txt";
-            string info = "C:\\Users\\Dayton\\source\\repos\\Prototype\\Prototype\\information.txt";
-            if (is_Registered(userFile,info))
+            string userFile = "C:\\Users\\nomuu\\source\\repos\\Prototype\\Prototype\\BlockchainUser1.txt";
+            string info = "C:\\Users\\nomuu\\source\\repos\\Prototype\\Prototype\\Information.txt";
+            string deathRecord = @"C:\Users\nomuu\source\repos\Prototype\Prototype\DeathRecord.txt";
+            if (FileEquals(deathRecord,info))
             {
                 MessageBox.Show("This name is in the death record");
             }
-            else {
-                MessageBox.Show("You may continue");
-            }
+            else if (FileEquals(userFile,info))
+            {
 
-            var form2 = new Form2();
-            form2.FormClosed += (s, args) => this.Close();
-            form2.Show();
+                this.Hide();
+                var form2 = new Form2();
+                form2.FormClosed += (s, args) => this.Close();
+                form2.Show();
+
+            }
+            else
+            {
+                MessageBox.Show("User is not registered!");
+            }
         }
 
-        static bool FileEquals(string path1, string path2)
+        /*
+         *  Compares file, returns true if they are the same 
+         */
+        private Boolean FileEquals(string userFile, string info)
         {
-            byte[] file1 = System.IO.File.ReadAllBytes(path1);
-            byte[] file2 = System.IO.File.ReadAllBytes(path2);
+            byte[] bytes1 = Encoding.Convert(Encoding.GetEncoding(1252), Encoding.ASCII, Encoding.GetEncoding(1252).GetBytes(System.IO.File.ReadAllText(userFile)));
+            byte[] bytes2 = Encoding.Convert(Encoding.GetEncoding(1252), Encoding.ASCII, Encoding.GetEncoding(1252).GetBytes(System.IO.File.ReadAllText(info)));
 
-            for (int i = 0; i < 3; i++)
+            if (Encoding.ASCII.GetChars(bytes1).SequenceEqual(Encoding.ASCII.GetChars(bytes2)))
             {
-                if (file1[i] != file2[i])
-                {
-                    return false;
-                }
+                return true;
             }
-            return true;
+            return false;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
