@@ -50,8 +50,8 @@ namespace Prototype
             System.IO.File.WriteAllLines(@"C:\Users\Dayton\Documents\Information.txt", contents);
 
             // Must be changed to local directory
-            string userFile = "C:\\Users\\Dayton\\Documents\\BlockchainUser1.txt";
-            string info = "C:\\Users\\Dayton\\Documents\\information.txt";
+            string userFile = "C:\\Users\\Dayton\\source\\repos\\Prototype\\Prototype\\BlockchainUser1.txt";
+            string info = "C:\\Users\\Dayton\\source\\repos\\Prototype\\Prototype\\information.txt";
             if (is_Registered(userFile,info))
             {
 
