@@ -47,14 +47,15 @@ namespace Prototype
             contents[2] = "Date of Birth: " + textBox3.Text;
             contents[3] = "VUID: " + textBox4.Text;
 
-        //System.IO.File.AppendAllText(@"C:\Users\shane\OneDrive - LeTourneau University\Prototype\Prototype\blockchain.txt", contents[3] + \n);
-        // Must be changed to local directory
-        System.IO.File.WriteAllLines(@"C:\Users\Dayton\source\repos\Prototype\Prototype\Information.txt", contents);
+            System.IO.File.AppendAllText(@"C:\Users\shane\source\repos\Prototype\Prototype\blockchain.txt", contents[3] + "\n");
+            MessageBox.Show("You were added to the blockchain!");
+            // Must be changed to local directory
+            System.IO.File.WriteAllLines(@"C:\Users\shane\source\repos\Prototype\Prototype\Information.txt", contents);
 
             // Must be changed to local directory
-            string userFile = "C:\\Users\\Dayton\\source\\repos\\Prototype\\Prototype\\BlockchainUser1.txt";
-            string info = "C:\\Users\\Dayton\\source\\repos\\Prototype\\Prototype\\Information.txt";
-            string deathRecord = @"C:\Users\Dayton\source\repos\Prototype\Prototype\DeathRecord.txt";
+            string userFile = "C:\\Users\\shane\\source\\repos\\Prototype\\Prototype\\BlockchainUser1.txt";
+            string info = "C:\\Users\\shane\\source\\repos\\Prototype\\Prototype\\Information.txt";
+            string deathRecord = @"C:\Users\shane\source\repos\Prototype\Prototype\DeathRecord.txt";
             if (FileEquals(deathRecord,info))
             {
                 MessageBox.Show("This name is in the death record");
