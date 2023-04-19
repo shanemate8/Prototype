@@ -46,15 +46,15 @@ namespace Prototype
             contents[1] = "Last Name: " + textBox2.Text;
             contents[2] = "Date of Birth: " + textBox3.Text;
             contents[3] = "VUID: " + textBox4.Text;
-            
 
+        //System.IO.File.AppendAllText(@"C:\Users\shane\OneDrive - LeTourneau University\Prototype\Prototype\blockchain.txt", contents[3] + \n);
         // Must be changed to local directory
-        System.IO.File.WriteAllLines(@"C:\Users\nomuu\source\repos\Prototype\Prototype\Information.txt", contents);
+        System.IO.File.WriteAllLines(@"C:\Users\shane\Documents\Information.txt", contents);
 
             // Must be changed to local directory
-            string userFile = "C:\\Users\\nomuu\\source\\repos\\Prototype\\Prototype\\BlockchainUser1.txt";
-            string info = "C:\\Users\\nomuu\\source\\repos\\Prototype\\Prototype\\Information.txt";
-            string deathRecord = @"C:\Users\nomuu\source\repos\Prototype\Prototype\DeathRecord.txt";
+            string userFile = @"C:\\Users\\shane\Documents\BlockchainUser1.txt";
+            string info = @"C:\Users\shane\Documents\Information.txt";
+            string deathRecord = @"C:\Users\shane\Documents\DeathRecord.txt";
             if (FileEquals(deathRecord,info))
             {
                 MessageBox.Show("This name is in the death record");
