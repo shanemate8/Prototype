@@ -55,10 +55,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(250, 146);
+            this.button2.Location = new System.Drawing.Point(253, 146);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(68, 29);
+            this.button2.Size = new System.Drawing.Size(62, 29);
             this.button2.TabIndex = 2;
             this.button2.Text = "Submit";
             this.button2.UseVisualStyleBackColor = true;

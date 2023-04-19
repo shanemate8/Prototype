@@ -192,7 +192,7 @@
             this.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form6";
-            this.Text = "Form6";
+            this.Text = "Blockchain Voting LLC";
             this.Load += new System.EventHandler(this.Form6_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
