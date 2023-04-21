@@ -47,7 +47,7 @@ namespace Prototype
             contents[2] = "Date of Birth: " + textBox3.Text;
             contents[3] = "VUID: " + textBox4.Text;
 
-            System.IO.File.AppendAllText(@"C:\Users\shane\source\repos\Prototype\Prototype\blockchain.txt", contents[3] + "\n");
+            
             
             // Must be changed to local directory
             System.IO.File.WriteAllLines(@"C:\Users\shane\source\repos\Prototype\Prototype\Information.txt", contents);
@@ -68,6 +68,7 @@ namespace Prototype
                 var form2 = new Form2();
                 form2.FormClosed += (s, args) => this.Close();
                 form2.Show();
+                System.IO.File.AppendAllText(@"C:\Users\shane\source\repos\Prototype\Prototype\blockchain.txt", contents[3] + "\n");
                 MessageBox.Show("You were added to the blockchain!");
 
             }
@@ -78,6 +79,7 @@ namespace Prototype
                 var form2 = new Form2();
                 form2.FormClosed += (s, args) => this.Close();
                 form2.Show();
+                System.IO.File.AppendAllText(@"C:\Users\shane\source\repos\Prototype\Prototype\blockchain.txt", contents[3] + "\n");
                 MessageBox.Show("You were added to the blockchain!");
 
             }
