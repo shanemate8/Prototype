@@ -48,12 +48,13 @@ namespace Prototype
             contents[3] = "VUID: " + textBox4.Text;
 
             System.IO.File.AppendAllText(@"C:\Users\shane\source\repos\Prototype\Prototype\blockchain.txt", contents[3] + "\n");
-            MessageBox.Show("You were added to the blockchain!");
+            
             // Must be changed to local directory
             System.IO.File.WriteAllLines(@"C:\Users\shane\source\repos\Prototype\Prototype\Information.txt", contents);
 
             // Must be changed to local directory
             string userFile = "C:\\Users\\shane\\source\\repos\\Prototype\\Prototype\\BlockchainUser1.txt";
+            string userFile1 = "C:\\Users\\shane\\source\\repos\\Prototype\\Prototype\\BlockchainUser2.txt";
             string info = "C:\\Users\\shane\\source\\repos\\Prototype\\Prototype\\Information.txt";
             string deathRecord = @"C:\Users\shane\source\repos\Prototype\Prototype\DeathRecord.txt";
             if (FileEquals(deathRecord,info))
@@ -67,12 +68,24 @@ namespace Prototype
                 var form2 = new Form2();
                 form2.FormClosed += (s, args) => this.Close();
                 form2.Show();
+                MessageBox.Show("You were added to the blockchain!");
+
+            }
+            else if (FileEquals(userFile1, info))
+            {
+
+                this.Hide();
+                var form2 = new Form2();
+                form2.FormClosed += (s, args) => this.Close();
+                form2.Show();
+                MessageBox.Show("You were added to the blockchain!");
 
             }
             else
             {
                 MessageBox.Show("User is not registered!");
             }
+            
         }
 
         /*
