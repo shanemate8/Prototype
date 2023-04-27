@@ -56,8 +56,13 @@ namespace Prototype
             string userFile1 = "C:\\Users\\shane\\source\\repos\\Prototype\\Prototype\\BlockchainUser2.txt";
             string info = "C:\\Users\\shane\\source\\repos\\Prototype\\Prototype\\Information.txt";
             string deathRecord = "C:\\Users\\shane\\source\\repos\\Prototype\\Prototype\\DeathRecord.txt";
-            string blockchain = "C:\\Users\\shane\\source\\repos\\Prototype\\Prototype\\blockchaintest.txt";
+            
+            //first attempt
+            //string blockchain = "C:\\Users\\shane\\source\\repos\\Prototype\\Prototype\\blockchaintest.txt";
+
             //List<string> list = System.IO.File.ReadAllLines(blockchain).ToList();
+
+            //second attempt:
             //FileStream stream;
             //StreamReader reader;
             //stream = new FileStream(blockchain, FileMode.Open, FileAccess.Read, FileShare.Read);
@@ -66,7 +71,7 @@ namespace Prototype
             // and check for your condition
             //if (contents[3].Equals(stringContainingFilesContent, StringComparison.OrdinalIgnoreCase))
             //{
-             //   MessageBox.Show("Your VUID has already been used!");
+            //   MessageBox.Show("Your VUID has already been used!");
             //}
             if (FileEquals(deathRecord, info))
             {
@@ -76,6 +81,7 @@ namespace Prototype
 
             else if (FileEquals(userFile, info))
             {
+                //first attempt
                 //foreach (string current in list)
                 //{
                 //  int compareResult = String.Compare(current, contents[3], StringComparison.Ordinal);
