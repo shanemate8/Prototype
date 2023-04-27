@@ -48,7 +48,6 @@ namespace Prototype
             contents[3] = "VUID: " + textBox4.Text;
 
             
-            
             // Must be changed to local directory
             System.IO.File.WriteAllLines(@"C:\Users\shane\source\repos\Prototype\Prototype\Information.txt", contents);
 
@@ -56,32 +55,71 @@ namespace Prototype
             string userFile = "C:\\Users\\shane\\source\\repos\\Prototype\\Prototype\\BlockchainUser1.txt";
             string userFile1 = "C:\\Users\\shane\\source\\repos\\Prototype\\Prototype\\BlockchainUser2.txt";
             string info = "C:\\Users\\shane\\source\\repos\\Prototype\\Prototype\\Information.txt";
-            string deathRecord = @"C:\Users\shane\source\repos\Prototype\Prototype\DeathRecord.txt";
-            if (FileEquals(deathRecord,info))
+            string deathRecord = "C:\\Users\\shane\\source\\repos\\Prototype\\Prototype\\DeathRecord.txt";
+            string blockchain = "C:\\Users\\shane\\source\\repos\\Prototype\\Prototype\\blockchaintest.txt";
+            //List<string> list = System.IO.File.ReadAllLines(blockchain).ToList();
+            //FileStream stream;
+            //StreamReader reader;
+            //stream = new FileStream(blockchain, FileMode.Open, FileAccess.Read, FileShare.Read);
+            //reader = new StreamReader(stream);
+            //string stringContainingFilesContent = reader.ReadToEnd();
+            // and check for your condition
+            //if (contents[3].Equals(stringContainingFilesContent, StringComparison.OrdinalIgnoreCase))
+            //{
+             //   MessageBox.Show("Your VUID has already been used!");
+            //}
+            if (FileEquals(deathRecord, info))
             {
                 MessageBox.Show("This name is in the death record");
             }
-            else if (FileEquals(userFile,info))
-            {
 
+
+            else if (FileEquals(userFile, info))
+            {
+                //foreach (string current in list)
+                //{
+                //  int compareResult = String.Compare(current, contents[3], StringComparison.Ordinal);
+
+                //if (compareResult != 0)
+                //{
                 this.Hide();
                 var form2 = new Form2();
                 form2.FormClosed += (s, args) => this.Close();
                 form2.Show();
-                System.IO.File.AppendAllText(@"C:\Users\shane\source\repos\Prototype\Prototype\blockchain.txt", contents[3] + "\n");
-                MessageBox.Show("You were added to the blockchain!");
 
+                System.IO.File.AppendAllText("C:\\Users\\shane\\source\\repos\\Prototype\\Prototype\\blockchain.txt", contents[3] + "\n");
+                MessageBox.Show("You were added to the blockchain!");
+                // }
+                // else
+                // {
+                //    MessageBox.Show("Your VUID has already been used!");
+                // }
+                //}
             }
+
             else if (FileEquals(userFile1, info))
             {
 
+                // foreach (string current in list)
+                //{
+                //  int compareResult = String.Compare(current, contents[3], StringComparison.Ordinal);
+
+                //if (compareResult != 0)
+                //{
                 this.Hide();
                 var form2 = new Form2();
                 form2.FormClosed += (s, args) => this.Close();
                 form2.Show();
-                System.IO.File.AppendAllText(@"C:\Users\shane\source\repos\Prototype\Prototype\blockchain.txt", contents[3] + "\n");
-                MessageBox.Show("You were added to the blockchain!");
 
+                System.IO.File.AppendAllText("C:\\Users\\shane\\source\\repos\\Prototype\\Prototype\\blockchain.txt", contents[3] + "\n");
+                MessageBox.Show("You were added to the blockchain!");
+                //}
+                //else
+                //{
+                //  MessageBox.Show("Your VUID has already been used!");
+                //}
+
+                // }
             }
             else
             {
