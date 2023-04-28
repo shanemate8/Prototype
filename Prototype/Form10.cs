@@ -16,6 +16,8 @@ namespace Prototype
 {
     public partial class Form10 : Form
     {
+        BlockchainVotingLLC frm2;
+        Form2 frm;
         public Form10()
         {
             InitializeComponent();
@@ -33,10 +35,14 @@ namespace Prototype
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            var form2 = new BlockchainVotingLLC();
-            form2.FormClosed += (s, args) => this.Close();
-            form2.Show();
+            if (frm2 == null)
+            {
+                frm2 = new BlockchainVotingLLC();
+                frm2.FormClosed += frm2_FormClosed;
+            }
+            frm2.Show(this);
+            Hide();
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -70,7 +76,7 @@ namespace Prototype
 
                 if (compareResult == 0)
                 {
-                    MessageBox.Show("Your VUID has already been used!");
+                    MessageBox.Show("Your are already in the blockchain!");
                     return;
                 }
             }
@@ -84,10 +90,13 @@ namespace Prototype
             else if (FileEquals(userFile, info))
             {
 
-                this.Hide();
-                var form2 = new Form2();
-                form2.FormClosed += (s, args) => this.Close();
-                form2.Show();
+                if (frm == null)
+                {
+                    frm = new Form2();
+                    frm.FormClosed += frm2_FormClosed;
+                }
+                frm.Show(this);
+                Hide();
                 //reader.Close();
                 System.IO.File.AppendAllText("C:\\Users\\shane\\source\\repos\\Prototype\\Prototype\\blockchain.txt", contents[3] + "\n");
                 MessageBox.Show("You were added to the blockchain!");
@@ -96,10 +105,13 @@ namespace Prototype
 
             else if (FileEquals(userFile1, info))
             {
-                this.Hide();
-                var form2 = new Form2();
-                form2.FormClosed += (s, args) => this.Close();
-                form2.Show();
+                if (frm == null)
+                {
+                    frm = new Form2();
+                    frm.FormClosed += frm2_FormClosed;
+                }
+                frm.Show(this);
+                Hide();
                 System.IO.File.AppendAllText("C:\\Users\\shane\\source\\repos\\Prototype\\Prototype\\blockchain.txt", contents[3] + "\n");
                 MessageBox.Show("You were added to the blockchain!");
             }
@@ -108,6 +120,12 @@ namespace Prototype
                 MessageBox.Show("User is not registered!");
             }
 
+        }
+        void frm2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frm2 = null;
+            frm = null;
+            Show();
         }
 
         /*
@@ -138,6 +156,16 @@ namespace Prototype
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Fill out your information and then click next to go to the next position, click back to go back");
         }
     }
 }

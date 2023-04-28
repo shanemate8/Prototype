@@ -12,6 +12,7 @@ namespace Prototype
 {
     public partial class Form6 : Form
     {
+        Form2 frm2;
         public string stdName { get; set; }
         public Form6()
         {
@@ -20,10 +21,13 @@ namespace Prototype
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            var form2 = new Form2();
-            form2.FormClosed += (s, args) => this.Close();
-            form2.Show();
+            if (frm2 == null)
+            {
+                frm2 = new Form2();
+                frm2.FormClosed += frm2_FormClosed;
+            }
+            frm2.Show(this);
+            Hide();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -44,7 +48,11 @@ namespace Prototype
 
             }
         }
-
+        void frm2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frm2 = null;
+            Show();
+        }
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();

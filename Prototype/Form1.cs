@@ -12,6 +12,7 @@ namespace Prototype
 {
     public partial class BlockchainVotingLLC : Form
     {
+        Form10 frm2;
         public BlockchainVotingLLC()
         {
             InitializeComponent();
@@ -29,14 +30,25 @@ namespace Prototype
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (frm2 == null)
+            {
+                frm2 = new Form10();
+                frm2.FormClosed += frm2_FormClosed;
+                
 
-            this.Hide();
-            var form2 = new Form10();
-            form2.FormClosed += (s, args) => this.Close();
-            form2.Show();
+            }
+            
+            frm2.Show(this);
+            Hide();
+            
 
         }
-
+        void frm2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frm2 = null;
+            Show();
+            
+        }
         private void Form2_Load(object sender, EventArgs e)
         {
 

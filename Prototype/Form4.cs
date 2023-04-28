@@ -12,7 +12,9 @@ namespace Prototype
 {
     public partial class Form4 : Form
     {
-        
+        Form2 frm2;
+        Form5 frm;
+
 
         public Form4()
         {
@@ -21,23 +23,35 @@ namespace Prototype
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            var form2 = new Form2();
-            form2.FormClosed += (s, args) => this.Close();
-            form2.Show();
+            if (frm2 == null)
+            {
+                frm2 = new Form2();
+                frm2.FormClosed += frm2_FormClosed;
+            }
+            frm2.Show(this);
+            Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            var form2 = new Form5();
-            form2.FormClosed += (s, args) => this.Close();
-            form2.stdName = textBox1.Text;
-            form2.Show();
-
+           
+            if (frm == null)
+            {
+                frm = new Form5();
+                frm.FormClosed += frm2_FormClosed;
+                frm.stdName = textBox1.Text;
+            }
+            frm.Show(this);
+            Hide();
             
-        }
 
+        }
+        void frm2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frm2 = null;
+            frm = null;
+            Show();
+        }
         private void Form4_Load(object sender, EventArgs e)
         {
 
